@@ -10,6 +10,11 @@ let sonucyazi = document.querySelector(".sonucyazi");
 let tryagain = document.querySelector(".tryagain");
 let gameShow = document.querySelector(".game-show");
 let scorepoint = document.querySelector(".scorepoint");
+let rules = document.querySelector(".rules");
+let rulesShow = document.querySelector(".rules-show");
+let X = document.querySelector(".X");
+let mbX = document.querySelector(".mbX");
+
 
 let game = [paper, scissors, rock];
 let randomchoice = Math.round(Math.random() * 2);
@@ -70,3 +75,19 @@ function handleResetClick() {
 }
 
 tryagain.addEventListener("click", handleResetClick);
+
+
+function handleRulesClick() {
+  rulesShow.style.display = "flex";
+}
+
+rules.addEventListener("click", handleRulesClick);
+
+
+function handleXClick() {
+  rulesShow.style.display = "none";
+}
+
+X.addEventListener("click", handleXClick);
+mbX.addEventListener("click", handleXClick);
+
