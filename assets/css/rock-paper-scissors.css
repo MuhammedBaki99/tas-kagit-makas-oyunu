@@ -130,7 +130,8 @@ h6 {
 :is(.show, .computer-show) img {
   width: 293px;
 }
-.show  {
+
+.show {
   position: relative;
 }
 
@@ -146,9 +147,11 @@ h6 {
   text-align: center;
   color: white;
 }
-.computer-show  {
+
+.computer-show {
   position: relative;
 }
+
 .computer-show::before {
   content: "Bilgisayarın Seçimi";
   position: absolute;
@@ -192,7 +195,6 @@ h6 {
 
 .rules {
   width: 128px;
-  color: white;
   border: 1px solid rgba(255, 255, 255, 1);
   padding-block: 11px;
   border-radius: 10px;
@@ -206,28 +208,25 @@ h6 {
   border: 1px solid rgba(255, 255, 255, 1);
   cursor: pointer;
 }
-.rules a{
-  color: white;
-  text-decoration: none;
-}
-.rules a:hover{
-  color: white;
-  text-decoration: none;
+
+.rules:hover p {
   color: rgba(59, 66, 98, 1);
 }
-.rules a p{
+
+.rules p {
   font-size: 16px;
   font-weight: 600;
   line-height: 19.2px;
   letter-spacing: 2.5px;
   text-align: center;
+  color: white;
 }
 
 
 @media (width <=768px) {
   .container {
     width: 311px;
-    margin: 0 auto;
+    margin: 0;
     padding-block: 32px;
   }
 
@@ -277,22 +276,76 @@ h6 {
   }
 
   .hero {
+    width: 311px;
     background-image: none;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     row-gap: 15px;
     column-gap: 51px;
     align-items: center;
   }
 
-  .hero-item>img {
+  .hero>img {
     width: 130px;
   }
 
-  .hero-item>img:hover {
+  .hero>img:hover {
     border: 28px solid rgba(255, 255, 255, .05);
     border-radius: 50%;
   }
+
+  .game-show {
+    width: 311px;
+    margin: 167px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  :is(.show, .computer-show) img {
+    width: 200px;
+  }
+
+  .show {
+    position: relative;
+  }
+
+  .show::before {
+    content: "Senin Seçimin";
+    position: absolute;
+    top: -83px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 3px;
+    text-align: center;
+    color: white;
+  }
+
+  .computer-show {
+    position: relative;
+  }
+
+  .computer-show::after {
+    content: "Bilgisayarın Seçimi";
+    position: absolute;
+    top: 220px;
+    left:0px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 3px;
+    text-align: center;
+    color: white;
+  }
+
+  .computer-show::before {
+    content: "";
+  }
+
 
   .rules {
     width: 128px;
@@ -300,8 +353,11 @@ h6 {
     border: 1px solid rgba(255, 255, 255, 1);
     padding-block: 11px;
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 50px auto;
     float: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 
   .rules:hover {
@@ -316,8 +372,150 @@ h6 {
     font-weight: 600;
     line-height: 19.2px;
     letter-spacing: 2.5px;
-    text-align: center;
   }
 
 
 }
+
+
+/* All rules codes */
+
+
+.rules-show {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 200px);
+  width: 400px;
+  margin: 177px auto;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 32px;
+  border-radius: 10px;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+.rules-header {
+  width: 336px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rules-header p {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 32px;
+  text-align: left;
+  color: rgba(59, 66, 98, 1);
+}
+
+.rules-hero {
+  width: 305px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    "kagıt leftbeat makas"
+    "downrightbeat empty uprightbeat"
+    "tas tas tas";
+  align-items: center;
+}
+
+.kagıt {
+  grid-area: kagıt;
+}
+
+.left-beats {
+  grid-area: leftbeat;
+  margin-inline: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.makas {
+  grid-area: makas;
+}
+
+.down-right-beats {
+  grid-area: downrightbeat;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.up-right-beats {
+  grid-area: uprightbeat;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tas {
+  grid-area: tas;
+  width: 81px;
+  margin: 0 auto;
+}
+
+.beats {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 13px;
+  text-align: left;
+  color: rgba(177, 180, 197, 1);
+}
+
+@media (width <= 768px) {
+
+  .rules-show {
+    width: 311px;
+    margin: 177px auto;
+    background-color: rgba(255, 255, 255, 1);
+    padding-inline: 0px;
+    padding-block: 20px;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 48px;
+    position: absolute;
+    top: 0px;
+    left: 40px;
+  }
+
+  .rules-hero {
+    width: 250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+      "kagıt leftbeat makas"
+      "downrightbeat empty uprightbeat"
+      "tas tas tas";
+    align-items: center;
+    padding: 0px;
+  }
+
+  .rules-header {
+    justify-content: center;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+    width: 19px;
+    margin: 0 auto;
+  }
+}
+
+
+/******************/
